@@ -16,9 +16,9 @@ void update(complex_float* update_input, complex_float* update_kappa,
     static complex_float a[ROW];
     static complex_float b[ROW][COL];
     static complex_float c[COL];
-//    int /factor = 2;
-//#pragma HLS array_partition variable=b cyclic factor=factor dim=2
-//#pragma HLS array_partition variable=a cyclic factor=30 dim=1
+    int factor = 2;
+#pragma HLS array_partition variable=b cyclic factor=factor dim=2
+#pragma HLS array_partition variable=a cyclic factor=30 dim=1
 
 
     // stream in first matrix
